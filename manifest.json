@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "AddLink",
+  "version": "1.0",
+  "browser_action": {
+  	"default_icon": "icon.png",
+  	"default_popup": "addlink.html",
+    "default_title": "addlink"
+  	},
+
+"content_scripts": [
+    {
+      "matches": ["http://www.zsedu.net/*","http://192.168.100.35/*"],
+      "js": ["addlink.js", "jquery-2.2.3.min.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+
+  "description": "add a website link to JSPXCMS",
+    "permissions": [
+    "tabs", "http://*/*", "https://*/*"
+  ],
+  "web_accessible_resources": [ "addlink.html", "icon.png",  "option.html" ]
+}
